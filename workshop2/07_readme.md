@@ -38,13 +38,6 @@ Optional notebook:
 
 These are teaching notebooks, not large-scale benchmarks.
 
-- Setup and tokenization notebooks: around 10 to 20 minutes each
-- Embeddings and retriever benchmarking: around 15 to 30 minutes each depending on model downloads
-- LLM comparison and evaluation: around 20 to 40 minutes each depending on hardware
-- Optional LoRA notebook: around 25 to 60 minutes depending on whether a GPU is available
-
-In a fresh Colab runtime, the first model download often takes longer than the actual computation.
-
 ## Required libraries
 
 Most notebooks use a subset of:
@@ -61,40 +54,3 @@ Most notebooks use a subset of:
 - `datasets`
 - `peft`
 - `accelerate`
-
-Some notebooks include commented `pip install` cells so participants can bootstrap a fresh Colab runtime quickly.
-
-## Suggested pacing for a live workshop
-
-If you have around 3 hours:
-
-1. `01_tokenization_playground.ipynb` for observing how the same text becomes different model inputs
-2. `02_embeddings_and_similarity.ipynb` for semantic similarity and bilingual retrieval behavior
-3. `03_retriever_benchmarking_for_rag.ipynb` for the main retrieval lesson
-4. `04_llm_comparison_in_same_rag_pipeline.ipynb` for generator comparison with fixed evidence
-5. `05_evaluating_rag_systems.ipynb` for a structured evaluation discussion
-
-If you have more time or a more technical audience:
-
-1. Add a retrieval error analysis segment after notebook 3
-2. Use notebook 4 to compare more model/prompt variants
-3. End with notebook 6 as an optional extension on lightweight adaptation
-
-## Suggested discussion prompts
-
-- What makes a tokenizer a poor fit for a language or archive task?
-- Which retrieval failures matter most in community-governed archive assistants?
-- When is a better retriever more valuable than a better LLM?
-- When should the system abstain?
-- What does good citation look like in an archive assistant?
-- When might LoRA help?
-- When is retrieval already enough?
-- Which evaluation dimensions require human review rather than automatic scoring?
-- How should governance metadata affect retrieval eligibility?
-
-## Teaching notes
-
-- Encourage participants to paste in their own examples, but remind them to respect data handling and community governance rules.
-- Keep emphasizing that retrieval quality often controls answer quality.
-- Treat citation, abstention, and provenance as first-class features rather than extras.
-- Use the optional LoRA notebook as a complement to retrieval-first design, not a replacement for it.
